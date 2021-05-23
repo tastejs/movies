@@ -17,14 +17,69 @@
     <style id="critical">
         body { background: black; color: white;}
         body { font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+        ::-moz-selection {
+  background-color: #C3CFE2;
+}
+
+::selection {
+  background-color: #C3CFE2;
+}
+.center { text-align: center; }
+
+.headline {
+  /* text-transform: uppercase; */
+  background: linear-gradient(45deg, #a875ec 20%, #ff6b7c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 6em;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -.06em;
+  margin-bottom: 10px;
+}
+
+a { color: #DC6FA9; }
+
+section {
+    padding: 26px 70px;
+}
+
+.demo-link {
+    padding: 16px 30px 16px 30px;
+    background: black;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin: 21px 16px 36px 16px;
+    text-decoration: none;
+    color: white;
+}
+
+.demo-link:hover {
+    color: black;
+    background: white;
+}
+
+#demos {
+    padding: 16px;
+}
     </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&text=MoviesApp" rel="stylesheet">
 </head>
 <body>
     <main>
-        <h1>Movies App</h1>
-        <h2>A non-trivial learning app in <a href="https://github.com/tastejs/next-movies">Next.js</a> or <a href="https://github.com/tastejs/nuxt-movies">Nuxt.js</a></h2>
-        <h3>The Movies App is a non-trivial demo application built on top of the TMDB (The Movie Database) API. It features multiple routes and views, authentication, dark mode and a range of performance optimizations. The goal here is to educate developers on how they can build a good user-experience that can both help on the <a href="https://web.dev/vitals">Core Web Vitals</a> while maintaining good DX.</h3>
+        <h1 class="headline">Movies App</h1>
+        <h2 class="center">A non-trivial learning app in <a href="https://github.com/tastejs/next-movies">Next.js</a> or <a href="https://github.com/tastejs/nuxt-movies">Nuxt.js</a></h2>
+        <div class="center" id="demos">
+            <a class="demo-link" href="https://movies.zaps.dev">Demo - Next.js</a>
+            <a class="demo-link" href="https://nuxt-movies.vercel.app">Demo - Nuxt.js</a></div>
+        <section>
+        <h3><p>The Movies App is a non-trivial demo application built on top of the <a href="https://www.themoviedb.org/">TMDB (The Movie Database)</a> API. It features multiple routes and views, authentication, dark mode and a range of performance optimizations.</p><p>Our goal is to educate developers on how they can build a good user-experience that can both help on the <a href="https://web.dev/vitals">Core Web Vitals</a> while maintaining good DX.</p></h3>
         <p><strong>Note:</strong> While every effort has been made to optimize performance, these applications are not considered perfect nor canonical. Feel free to learn from them or contribute back if you spot something we could improve!</p>
+    </section>
+    <section>
         <h2>Views include:</h2>
         <ul>
             <li>Popular Movies - with pagination</li>
@@ -37,10 +92,102 @@
             <li>Lists - view all your saved lists</li>
             <li>Lists - add/remove/edit lists</li>
         </ul>
+    </section>
+    <section class="center">
         <h2>Screenshots</h2>
-        <h2>Credits</h2>
+
+<h4>Category view for Popular (Desktop):</h4>
+
+<picture>
+    <img
+    sizes="(max-width: 1400px) 100vw, 1400px"
+    srcset="
+    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_200/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp 200w,
+    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_472/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp 472w,
+    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_563/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp 563w,
+    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp 1357w,
+    https://res.cloudinary.com/ddxwdqwkr/image/upload/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp 1400w"
+    src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp"
+    alt="Category view for Popular (Desktop)" width="1024" height="758" loading="lazy">
+</picture>
+
+
+<h4>Category view for Popular (Mobile):</h4>
+
+<picture>
+    <img
+    sizes="(max-width: 1400px) 100vw, 1400px"
+    srcset="
+    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_200/v1621796411/next-movies/Screen_Shot_2021-05-14_at_3.28.12_PM.webp 200w,
+    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_472/v1621796411/next-movies/Screen_Shot_2021-05-14_at_3.28.12_PM.webp 472w,
+    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_563/v1621796411/next-movies/Screen_Shot_2021-05-14_at_3.28.12_PM.webp 563w,
+    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796411/next-movies/Screen_Shot_2021-05-14_at_3.28.12_PM.webp 1357w,
+    https://res.cloudinary.com/ddxwdqwkr/image/upload/v1621796411/next-movies/Screen_Shot_2021-05-14_at_3.28.12_PM.webp 1400w"
+    src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1621796411/next-movies/Screen_Shot_2021-05-14_at_3.28.12_PM.webp"
+    alt="Category view for Popular (Mobile)" width="1024" height="758" loading="lazy">
+</picture>
+
+<h4>Search Results for "Mortal Kombat" (Desktop)</h4>
+<img decode="async" width="1024" height="768" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796423/next-movies/Screen_Shot_2021-05-14_at_3.24.27_PM.webp" loading="lazy"/>
+
+<h4>Movie view for "Mortal Kombat" (Desktop)</h4>
+<img decode="async" width="1024" height="768" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796371/next-movies/Screen_Shot_2021-05-14_at_3.22.28_PM.webp" loading=lazy"/>
+
+<h4>Movie view for "Mortal Kombat" (Mobile)</h4>
+<img decode="async" width="1024" height="768" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796412/next-movies/Screen_Shot_2021-05-14_at_3.28.02_PM.webp" loading="lazy"/>
+
+<h4>Category view for "TV/Movies" (Desktop)</h4>
+<img decode="async" width="1024" height="768" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796397/next-movies/Screen_Shot_2021-05-14_at_3.23.32_PM.webp" loading="lazy"/>
+
+<h4>Category view for "Recommended" (Desktop)</h4>
+<img decode="async" width="1024" height="768" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796397/next-movies/Screen_Shot_2021-05-14_at_3.22.38_PM.webp" loading=lazy/>
+
+
+<h4>Movie view for "Wonder Woman" (Desktop)</h4>
+<img decode="async" width="1024" height="768" loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796396/next-movies/Screen_Shot_2021-05-14_at_3.27.10_PM.webp"/>
+
+<h4>Movie view for "Wonder Woman" (Mobile)</h4>
+<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796410/next-movies/Screen_Shot_2021-05-14_at_3.27.47_PM.webp"/>
+
+<h4>Actor view for Gal Gadot (Desktop)</h4>
+<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796404/next-movies/Screen_Shot_2021-05-14_at_3.27.14_PM.webp"/>
+
+<h4>Actor view for Gal Gadot (Mobile)</h4>
+<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796421/next-movies/Screen_Shot_2021-05-14_at_3.27.41_PM.webp"/>
+
+<h4>Movies view for Light Mode (Desktop)</h4>
+<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796402/next-movies/Screen_Shot_2021-05-14_at_3.23.46_PM.webp"/>
+
+<h4>Popularity view in dark mode (Desktop)</h4>
+<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796423/next-movies/Screen_Shot_2021-05-14_at_3.27.20_PM.webp"/>
+
+<h4>Actor view for Henry Cavill (Desktop)</h4>
+<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796376/next-movies/Screen_Shot_2021-05-14_at_3.22.54_PM.webp"/>
+
+<h4>Logged-in view for creating a list of movies (Desktop)</h4>
+<img loading="lazy" decode="async" width="1024" height="607" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621801624/next-movies/Screen_Shot_2021-05-23_at_1.20.29_PM.webp"/>
+
+<h4>Logged-in view of a single saved list of movies (Desktop)</h4>
+<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796391/next-movies/Screen_Shot_2021-05-14_at_3.24.00_PM.webp"/>
+
+<h4>Logged-in view of all of your lists of movies</h4>
+<img loading="lazy" decode="async" width="1024" height="607" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621801624/next-movies/Screen_Shot_2021-05-23_at_1.20.44_PM.webp"/>
+
+<h4>Logged-in view for editing a list of movies (Desktop)</h4>
+<img loading="lazy" decode="async" width="1024" height="607" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621801624/next-movies/Screen_Shot_2021-05-23_at_1.21.03_PM.webp"/>
+
+<h4>Movie view for "Jutice League" (Desktop)</h4>
+<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796380/next-movies/Screen_Shot_2021-05-14_at_3.22.48_PM.webp"/>
+
+<h4>Movie view for "Justice League" (Mobile)</h4>
+<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796426/next-movies/Screen_Shot_2021-05-14_at_3.28.36_PM.webp"/>
+
+    </section>
+    <section>
+        <h2>Cast/Credits</h2>
         <p>A huge thanks to all our contributors for their help, in particular:</p>
         <p>Thanks also goes to the Chrome Web Framework fund for sponsoring some of the improvements here.</p>
+    </section>
     </main>
 </body>
 </html>
