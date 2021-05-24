@@ -20,6 +20,12 @@ body { background: black; color: white;}
 body { font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
 ::-moz-selection { background-color: #C3CFE2; }
 
+#logo-container { margin-top: 25px; }
+#logo-container img {
+    width: 50%;
+    height: auto;
+}
+
 ::selection {
   background-color: #C3CFE2;
 }
@@ -27,19 +33,20 @@ body { font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
 
 .headline {
   /* text-transform: uppercase; */
-  background: linear-gradient(45deg, #a875ec 20%, #ff6b7c 100%);
+  /* background: linear-gradient(45deg, #a875ec 20%, #ff6b7c 100%); */
+  background: rgb(130,52,240);
+background: linear-gradient(186deg, rgba(130,52,240,1) 0%, rgba(161,35,254,1) 19%, rgba(222,53,238,1) 36%, rgba(246,74,214,1) 55%, rgba(251,103,172,1) 72%, rgba(251,136,137,1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 6em;
   text-align: center;
-  font-family: 'Inter', sans-serif;
   line-height: 1;
   font-weight: 800;
   letter-spacing: -.06em;
   margin-bottom: 10px;
 }
 
-a { color: #DC6FA9; }
+a { color: #F74FCF; }
 
 section {
     padding: 26px 70px;
@@ -81,6 +88,10 @@ section img {
     section {
       padding: 26px 20px;
     }
+    #logo-container img {
+      width: 90%;
+      height: auto;
+    }
 }
     </style>
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
@@ -88,7 +99,9 @@ section img {
 </head>
 <body>
     <main>
-        <h1 class="headline">Movies App</h1>
+        <div class="center" id="logo-container">
+            <img src="images/logo.svg" width="1035" height="236" alt="Logo">
+        </div>
         <h2 class="center">A non-trivial learning app in <a href="https://github.com/tastejs/next-movies">Next.js</a> or <a href="https://github.com/tastejs/nuxt-movies">Nuxt.js</a></h2>
         <div class="center" id="demos">
             <a class="demo-link" href="https://movies.zaps.dev">Demo - Next.js</a>
