@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A non-trivial Movies learning application in Next.js or Nuxt.js">
     <title>Movies App</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -63,6 +64,19 @@ section {
 
 #demos {
     padding: 16px;
+}
+
+section img {
+    width: 100%;
+    height: auto;
+}
+
+@media all and (max-width: 960px) {
+    #demos { padding:inherit; }
+    .demo-link {display:block;}
+    section {
+      padding: 26px 20px;
+    }
 }
     </style>
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
