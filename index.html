@@ -16,11 +16,9 @@
     <meta name="msapplication-config" content="/images/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <style id="critical">
-        body { background: black; color: white;}
-        body { font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
-        ::-moz-selection {
-  background-color: #C3CFE2;
-}
+body { background: black; color: white;}
+body { font-family: Helvetica Neue,Helvetica,Arial,sans-serif; }
+::-moz-selection { background-color: #C3CFE2; }
 
 ::selection {
   background-color: #C3CFE2;
@@ -71,6 +69,12 @@ section img {
     height: auto;
 }
 
+#screenshots {
+    /* https://web.dev/content-visibility/ */
+    content-visibility: auto;
+    contain-intrinsic-size: 6500px;
+}
+
 @media all and (max-width: 960px) {
     #demos { padding:inherit; }
     .demo-link {display:block;}
@@ -107,7 +111,7 @@ section img {
             <li>Lists - add/remove/edit lists</li>
         </ul>
     </section>
-    <section class="center">
+    <section class="center" id="screenshots">
         <h2>Screenshots</h2>
 
 <h4>Category view for Popular (Desktop):</h4>
