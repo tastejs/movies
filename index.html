@@ -93,6 +93,35 @@ section img {
       height: auto;
     }
 }
+
+.w-mt--xl {
+    margin-top: 56px!important;
+}
+
+.w-pt--sm {
+    padding-top: 8px!important;
+}
+.w-author {
+    text-align: center;
+}
+.w-authors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.w-author__image {
+    background-color: #dadce0;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    flex-shrink: 0;
+    height: 64px;
+    margin: 0 12px 0 0;
+    min-width: 64px;
+    object-fit: cover;
+    overflow: hidden;
+    width: 64px;
+}
     </style>
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Inter&text=MoviesApp" rel="stylesheet"> -->
@@ -100,7 +129,7 @@ section img {
 <body>
     <main>
         <div class="center" id="logo-container">
-            <img src="images/logo.svg" width="1035" height="236" alt="Logo">
+            <img src="images/logo.svg" width="1035" height="236" alt="Movies App Logo">
         </div>
         <h2 class="center">A non-trivial learning app in <a href="https://github.com/tastejs/next-movies">Next.js</a> or <a href="https://github.com/tastejs/nuxt-movies">Nuxt.js</a></h2>
         <div class="center" id="demos">
@@ -207,14 +236,107 @@ section img {
     <section>
         <h2>Cast/Credits</h2>
         <p>A huge thanks to all our contributors for their help, in particular:</p>
-        <ul>
-            <li>Anton Karlovskiy</li>
-            <li>Addy Osmani</li>
-            <li>Pooya parsa</li>
-            <li>Daniel Roe</li>
-            <li>Jason.codes</li>
-        </ul>
-        <p>Thanks also goes to the Chrome Web Framework fund for sponsoring some of the improvements here.</p>
+
+        <div class="w-authors w-mt--xl w-pt--sm">
+  
+            <div class="w-author">
+              <a href="https://github.com/anton-karlovskiy">
+                  <img alt="Anton Karlovskiy" height="64" src="https://avatars.githubusercontent.com/u/49653735?s=64&v=4" width="64" class="w-author__image" loading="lazy" decoding="async">
+              </a>
+              <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+                  <cite class="w-author__name">
+                      <a href="https://github.com/anton-karlovskiy" class="w-author__name-link">
+                          Anton Karlovskiy
+                      </a>
+                  </cite>
+                  </div>
+              </div>
+          
+          
+              <div class="w-author">
+                  <a href="https://github.com/addyosmani">
+                      <img alt="Addy Osmani" height="64" src="https://avatars.githubusercontent.com/u/110953?s=64&v=4" width="64" class="w-author__image" loading="lazy" decoding="async">
+                  </a>
+                  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+                      <cite class="w-author__name">
+                          <a href="https://github.com/addyosmani" class="w-author__name-link">
+                              Addy Osmani
+                          </a>
+                      </cite>
+                      </div>
+                  </div>
+          
+                  <div class="w-author">
+                      <a href="https://github.com/pi0">
+                          <img alt="Pooya Parsa height="64" src="https://avatars.githubusercontent.com/u/5158436?s=64&v=4" width="64" class="w-author__image" loading="lazy" decoding="async">
+                      </a>
+                      <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+                          <cite class="w-author__name">
+                              <a href="https://github.com/pi0" class="w-author__name-link">
+                                  Pooya Parsa
+                              </a>
+                          </cite>
+                          </div>
+                      </div>
+          
+                      <div class="w-author">
+                          <a href="https://github.com/danielroe">
+                              <img alt="Daniel Roe" height="64" src="https://avatars.githubusercontent.com/u/28706372?s=64&v=4" width="64" class="w-author__image" loading="lazy" decoding="async">
+                          </a>
+                          <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+                              <cite class="w-author__name">
+                                  <a href="https://github.com/danielroe" class="w-author__name-link">
+                                      Daniel Roe
+                                  </a>
+                              </cite>
+                              </div>
+                          </div>
+          
+          
+                          <div class="w-author">
+                              <a href="https://github.com/Atinux">
+                                  <img alt="Sébastien Chopin"  height="64" src="https://avatars.githubusercontent.com/u/904724?s=64&v=4" width="64" class="w-author__image" loading="lazy" decoding="async">
+                              </a>
+                              <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+                                  <cite class="w-author__name">
+                                      <a href="https://github.com/Atinux" class="w-author__name-link">
+                                          Sébastien Chopin
+                                      </a>
+                                  </cite>
+                                  </div>
+                              </div>
+          
+          
+                              <div class="w-author">
+                                  <a href="https://github.com/jasonujmaalvis">
+                                      <img alt="Jason Ujma-Alvis" height="64" src="https://avatars.githubusercontent.com/u/1336276?v=4&s=64" width="64" class="w-author__image" loading="lazy" decoding="async">
+                                  </a>
+                                  <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+                                      <cite class="w-author__name">
+                                          <a href="https://github.com/jasonujmaalvis" class="w-author__name-link">
+                                              Jason Ujma-Alvis
+                                          </a>
+                                      </cite>
+                                      </div>
+                                  </div>
+          
+          
+                                  <div class="w-author">
+                                      <a href="https://github.com/fidalgodev">
+                                          <img alt="Fidalgo" height="64" src="https://avatars.githubusercontent.com/u/41859298?v=4&s=64" width="64" class="w-author__image" loading="lazy" decoding="async">
+                                      </a>
+                                      <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+                                          <cite class="w-author__name">
+                                              <a href="https://github.com/fidalgodev" class="w-author__name-link">
+                                                  Fidalgo
+                                              </a>
+                                          </cite>
+                                          </div>
+                                      </div>
+          </div>
+          
+          
+        <p>Thanks also goes to the Chrome Web Framework fund for contributing to sponsorship of the optimizations to these apps.</p>
     </section>
     </main>
 </body>
