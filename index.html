@@ -122,6 +122,11 @@ section img {
     overflow: hidden;
     width: 64px;
 }
+
+.additional {
+    padding-top: 16px;
+    padding-bottom: 0px;
+}
     </style>
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Inter&text=MoviesApp" rel="stylesheet"> -->
@@ -133,20 +138,21 @@ section img {
         </div>
         <h2 class="center">A non-trivial learning app in 
             <a href="https://github.com/tastejs/next-movies">Next.js</a>,
-            <a href="https://github.com/tastejs/nuxt-movies">Nuxt.js</a> or
-            <a href="https://github.com/tastejs/angular-movies">Angular</a>
+            <a href="https://github.com/tastejs/angular-movies">Angular</a> or
+            <a href="https://github.com/tastejs/nuxt-movies">Nuxt.js</a>
         </h2>
         <div class="center" id="demos">
             <a class="demo-link" rel="noopener" target="_blank" href="https://movies.zaps.dev">Demo - Next.js</a>
-            <a class="demo-link" rel="noopener" target="_blank" href="https://nuxt-movies.vercel.app">Demo - Nuxt.js</a>
             <a class="demo-link" rel="noopener" target="_blank" href="https://angular-movies-a12d3.web.app/movies/popular">Demo - Angular</a>
+            <a class="demo-link" rel="noopener" target="_blank" href="https://nuxt-movies.vercel.app">Demo - Nuxt.js</a>
+            <p class="additional">You may also be interested in other TMDB apps using <a href="https://github.com/WayneMorganUK/sveltekit-movie-app">Svelte</a></p>
         </div>
         <section>
         <section class="center">
             <img alt="This is a comparison of the two different kinds of movie application implementations that are available. While there are visual differences from a feature perspective they have a lot of similarities" src="images/next-nuxt.jpeg" loading="lazy" width="1200" height="478">
         </section>
-        <h3><p>The Movies App is a non-trivial demo application built on top of the <a href="https://www.themoviedb.org/">TMDB (The Movie Database)</a> API. It features multiple routes and views, authentication, dark mode and a range of performance optimizations.</p><p>Our goal is to educate developers on how they can build a good user-experience that can both help on the <a href="https://web.dev/vitals">Core Web Vitals</a> while maintaining good DX.</p></h3>
-        <p><strong>Note:</strong> While every effort has been made to optimize performance, these applications are not considered perfect nor canonical. Feel free to learn from them or contribute back if you spot something we could improve!</p>
+        <h3><p>The Movies App is a non-trivial demo application built on top of the <a href="https://www.themoviedb.org/">TMDB (The Movie Database)</a> API. It features multiple routes and views, authentication, dark mode and a range of performance optimizations.</p><p>Our goal is to educate developers on how they can build a good user-experience that can both help on the <a href="https://web.dev/vitals">Core Web Vitals</a> while maintaining good DX. We discourage using these apps for drawing apples to apples performance comparisons as they were not built with this use-case in mind.</p></h3>
+        <p><strong>Note:</strong> While every effort has been made to optimize performance, these applications are not considered perfect and can be impacted by TMDB API latency outside our control. Feel free to learn from them or contribute back if you spot something we could improve!</p>
     </section>
     <section>
         <h2>Views include:</h2>
