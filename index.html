@@ -143,7 +143,7 @@ section img {
             <a href="https://github.com/tastejs/nuxt-movies">Nuxt.js</a>
         </h2>
         <div class="center" id="demos">
-            <a class="demo-link" rel="noopener" target="_blank" href="https://movies.zaps.dev">Demo - Next.js</a>
+            <a class="demo-link" rel="noopener" target="_blank" href="https://next-movies-zeta.vercel.app/">Demo - Next.js</a>
             <a class="demo-link" rel="noopener" target="_blank" href="https://angular-movies-a12d3.web.app">Demo - Angular</a>
             <a class="demo-link" rel="noopener" target="_blank" href="https://nuxt-movies.vercel.app">Demo - Nuxt.js</a>
             <p class="additional">You may also be interested in additional TMDB apps using <a href="https://github.com/tastejs/sveltekit-movie-app">SvelteKit</a> (<a href="https://sveltekit-movies.netlify.app">Demo</a>) or <a href="https://github.com/tastejs/lit-movies">Lit</a> (<a href="https://lit-movies.netlify.app">Demo</a>)</p>
@@ -249,18 +249,24 @@ section img {
 
 <section>
     <h2>Performance Optimizations</h2>
-    <h3>Next.js - Optimized <a href="https://web.dev/lcp">Largest Contentful Paint</a> (<a href="https://www.webpagetest.org/video/compare.php?tests=210531_AiDc6Q_187fb2f81d8cd9b1480a5bb7d6d0cd2d,210531_AiDcKZ_416ad13bdc7e701855eff8135259f6f5">trace</a>)</h3>
-    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1622491356/next-movies/Next-WebPageTest_-_Visual_Comparison.webp" alt="LCP happens several seconds prior to when it occurs in the original implementation" width="2790" height="1194"/>
-    <p>PageSpeed Insights - Lighthouse Perfomance Score (90/100)</p>
+    <h3>Next.js - Optimized <a href="https://web.dev/lcp">Largest Contentful Paint</a></h3>
+    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1662240576/next-movies/Screen_Shot_2022-09-03_at_2.29.27_PM.webp" alt="LCP happens several seconds prior to when it occurs in the original implementation" width="2790" height="1194"/>
+    <p>PageSpeed Insights - Lighthouse Perfomance Score (86/100)</p>
     <div style="width:50%">
-    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1622492880/next-movies/next-psi.webp" width="1526" height="880"/>
+    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1662240632/next-movies/Screen_Shot_2022-09-03_at_2.30.22_PM.webp" width="1526" height="880"/>
     </div>
-    <h3>Nuxt.js - Optimized <a href="https://web.dev/lcp">Largest Contentful Paint</a> (<a href="https://www.webpagetest.org/video/compare.php?tests=210531_BiDc6X_0834ac0b842824e09b67b2874c856c54,210531_AiDcZD_556c7cdb59cbcb04934cbf94634f733f">trace</a>)</h3>
+    <h3>Nuxt.js - Optimized <a href="https://web.dev/lcp">Largest Contentful Paint</a></h3>
     <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1622491356/next-movies/Nuxt-WebPageTest_-_Visual_Comparison.webp" alt="LCP happens several seconds prior to when it occurs in the original implementation" width="2784" height="1198"/>
-    <p>PageSpeed Insights - Lighthouse Perfomance Score (80/100)</p>
+    <p>PageSpeed Insights - Lighthouse Perfomance Score (87/100)</p>
     <div style="width:50%">
-    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1622492880/next-movies/nuxt-psi.webp" width="1496" height="884"/>
-</div>
+    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1662240432/next-movies/Screen_Shot_2022-09-03_at_2.26.36_PM.webp" width="1496" height="884"/>
+    </div>
+    <h3>Angular - Optimized <a href="https://web.dev/lcp">Largest Contentful Paint</a></h3>
+    <p>PageSpeed Insights - Lighthouse Perfomance Score (92/100)</p>
+    <div style="width:50%">
+    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1662240889/next-movies/Screen_Shot_2022-09-03_at_2.34.40_PM.webp" width="2136" height="1476"/>
+    </div>
+ </section>
     
 </section>
     <section>
@@ -393,7 +399,7 @@ section img {
           </div>
           
         <p>&nbsp;</p>
-        <p>Special thanks goes to Jason who wrote the original <a href="https://github.com/jasonujmaalvis/vue-movies">vue-movies</a> and Fidalgo for <a href="https://github.com/fidalgodev/movie-library-react">react-movie-library</a>.</p>
+        <p>Special thanks goes to Jason who wrote the original <a href="https://github.com/jasonujmaalvis/vue-movies">vue-movies</a>, Fidalgo for <a href="https://github.com/fidalgodev/movie-library-react">react-movie-library</a>, Wayne for the original <a href="https://github.com/WayneMorganUK/sveltekit-movie-app">SvelteKit Movie App</a> and Hiten for <a href="https://github.com/bhi10/TMDB">Lit TMDB</a></p>
         
         <div class="w-authors w-mt--xl w-pt--sm">
           
@@ -423,6 +429,33 @@ section img {
                                           </cite>
                                           </div>
                                       </div>
+
+                                      <div class="w-author">
+                                        <a href="https://github.com/WayneMorganUK">
+                                            <img alt="Wayne" height="64" src="https://avatars.githubusercontent.com/u/44246461?v=4&s=64" width="64" class="w-author__image" loading="lazy" decoding="async">
+                                        </a>
+                                        <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+                                            <cite class="w-author__name">
+                                                <a href="https://github.com/WayneMorganUK" class="w-author__name-link">
+                                                    Wayne
+                                                </a>
+                                            </cite>
+                                            </div>
+                                        </div>
+
+                                        <div class="w-author">
+                                            <a href="https://github.com/bhi10">
+                                                <img alt="Wayne" height="64" src="https://avatars.githubusercontent.com/u/26054319?v=4&s=64" width="64" class="w-author__image" loading="lazy" decoding="async">
+                                            </a>
+                                            <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
+                                                <cite class="w-author__name">
+                                                    <a href="https://github.com/bhi10/" class="w-author__name-link">
+                                                        Hiten
+                                                    </a>
+                                                </cite>
+                                                </div>
+                                            </div>
+
           </div>
 
           <p>&nbsp;</p>
