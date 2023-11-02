@@ -44,6 +44,12 @@
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
         }
 
+        .body-gradient {
+            background-image: -moz-linear-gradient(180deg,rgba(22,22,22,0) 50%,#30325d 100%);
+            background-image: -webkit-linear-gradient(180deg,rgba(22,22,22,0) 50%,#30325d 100%);
+            background-image: linear-gradient(180deg,rgba(22,22,22,0) 50%,#30325d 100%);
+        }
+
         #logo-container img {
             width: 30%;
             height: auto;
@@ -206,19 +212,20 @@
             padding-bottom: 0px;
             font-size: 0.9em;
         }
+
+        .right-column img {
+            width: 100%;
+        }
     </style>
 
 </head>
 
-<body>
+<body class="body-gradient">
 
     <main>
 
         <div class="left-column">
 
-            <!-- <div class="center" id="logo-container">
-                <img fetchpriority="high" src="images/logo.svg" width="1035" height="236" alt="Movies App Logo">
-            </div> -->
             <h2 class="center">Movies: A non-trivial learning app in multiple frameworks</h2>
 
             <!-- Movies grid -->
@@ -231,11 +238,11 @@
                     </div>
 
                     <div>
-                        <a href="https://next-movies-zeta.vercel.app/" class="demo-btn">Demo</a>
-                        <a href="https://github.com/tastejs/next-movies" class="source-btn">Source</a>
+                        <a target="_blank" target="_blank" href="https://movies-flax-sigma.vercel.app/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/tastejs/next-movies" class="source-btn">Source</a>
                         <div style="display:block; font-size:0.8em; color:black; margin-top: 8px;">Next 12 <a
                                 href="https://next-movies-zeta.vercel.app/">demo</a> and <a
-                                href="https://github.com/tastejs/next-movies">source</a></div>
+                                href="https://github.com/oktay/movies">source</a></div>
                     </div>
 
                 </div>
@@ -246,8 +253,8 @@
                         <img class="movie-logo" src="images/angular-logo.svg" alt="Angular Logo">
                     </div>
                     <div>
-                        <a href="https://angular-movies-a12d3.web.app" class="demo-btn">Demo</a>
-                        <a href="https://github.com/tastejs/angular-movies" class="source-btn">Source</a>
+                        <a target="_blank" href="https://angular-movies-a12d3.web.app" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/tastejs/angular-movies" class="source-btn">Source</a>
                     </div>
                 </div>
 
@@ -257,8 +264,8 @@
                         <img class="movie-logo" src="images/nuxtjs-logo.svg" alt="Nuxt Logo">
                     </div>
                     <div>
-                        <a href="https://movies.nuxt.space/" class="demo-btn">Demo</a>
-                        <a href="https://github.com/nuxt/movies" class="source-btn">Source</a>
+                        <a target="_blank" href="https://movies.nuxt.space/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/nuxt/movies" class="source-btn">Source</a>
                     </div>
                 </div>
 
@@ -268,8 +275,8 @@
                         <img class="movie-logo" src="images/astro-logo.svg" alt="Astro Logo">
                     </div>
                     <div>
-                        <a href="https://astro-movies-app.netlify.app/" class="demo-btn">Demo</a>
-                        <a href="https://github.com/Charca/astro-movies" class="source-btn">Source</a>
+                        <a target="_blank" href="https://astro-movies-app.netlify.app/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/Charca/astro-movies" class="source-btn">Source</a>
                     </div>
                 </div>
 
@@ -279,8 +286,8 @@
                         <img class="movie-logo" src="images/solid-logo.svg" alt="Solid Logo">
                     </div>
                     <div>
-                        <a href="https://solid-movies.app/" class="demo-btn">Demo</a>
-                        <a href="https://github.com/solidjs/solid-start/tree/movies/examples/movies"
+                        <a target="_blank" href="https://solid-movies.app/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/solidjs/solid-start/tree/movies/examples/movies"
                             class="source-btn">Source</a>
                     </div>
                 </div>
@@ -291,8 +298,8 @@
                         <img class="movie-logo" src="images/svelte-logo.svg" alt="SvelteKit Logo">
                     </div>
                     <div>
-                        <a href="https://sveltekit-movies.netlify.app" class="demo-btn">Demo</a>
-                        <a href="https://github.com/tastejs/sveltekit-movie-app" class="source-btn">Source</a>
+                        <a target="_blank" href="https://sveltekit-movies.netlify.app" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/tastejs/sveltekit-movie-app" class="source-btn">Source</a>
                     </div>
                 </div>
 
@@ -302,8 +309,8 @@
                         <img class="movie-logo" src="images/lit-logo.svg" alt="Lit Logo">
                     </div>
                     <div>
-                        <a href="https://lit-movies-2.netlify.app/" class="demo-btn">Demo</a>
-                        <a href="https://github.com/bhi10/TMDB" class="source-btn">Source</a>
+                        <a target="_blank" href="https://lit-movies-2.netlify.app/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/bhi10/TMDB" class="source-btn">Source</a>
                     </div>
                 </div>
 
@@ -313,8 +320,8 @@
                         <img class="movie-logo" src="images/qwik-logo.svg" alt="Qwik Logo">
                     </div>
                     <div>
-                        <a href="https://qwik-city-movies-wm.netlify.app/" class="demo-btn">Demo</a>
-                        <a href="https://github.com/wmalarski/qwik-city-movies" class="source-btn">Source</a>
+                        <a target="_blank" href="https://qwik-city-movies-wm.netlify.app/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/wmalarski/qwik-city-movies" class="source-btn">Source</a>
                     </div>
                 </div>
 
@@ -324,8 +331,8 @@
                         <img class="movie-logo" src="images/enhance-logo.svg" alt="Enhance Logo">
                     </div>
                     <div>
-                        <a href="https://enhance-movies.com/" class="demo-btn">Demo</a>
-                        <a href="https://github.com/enhance-dev/enhance-movies" class="source-btn">Source</a>
+                        <a target="_blank" href="https://enhance-movies.com/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/enhance-dev/enhance-movies" class="source-btn">Source</a>
                     </div>
                 </div>
 
@@ -336,8 +343,7 @@
         <div class="right-column">
 
             <!-- Screenshot -->
-            <!-- <img src="images/next-nuxt.jpeg" alt="Screenshot"> -->
-            <div style="width: 100%; background: white; height:700px;">placeholder</div>
+            <img src="images/poster.webp" alt="Screenshot">
 
         </div>
 
@@ -360,7 +366,7 @@
             not considered perfect and can be impacted by TMDB API latency outside our control. Feel free to learn
             from them or contribute back if you spot something we could improve!</p>
         <p><strong>Bonus:</strong> If you are looking for a learning resource closer to the "Rosetta stone" for
-            frameworks, look at <a href="https://component-party.dev/">component-party.dev</a>.</p>
+            frameworks, look at <a target="_blank" href="https://component-party.dev/">component-party.dev</a>.</p>
     </section>
     <section>
         <h2>Views can include:</h2>
@@ -385,14 +391,14 @@
         <div class="w-authors w-mt--xl w-pt--sm">
 
             <div class="w-author">
-                <a href="https://github.com/anton-karlovskiy">
+                <a target="_blank" href="https://github.com/anton-karlovskiy">
                     <img alt="Anton Karlovskiy" height="64"
                         src="https://avatars.githubusercontent.com/u/49653735?s=64&v=4" width="64"
                         class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/anton-karlovskiy" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/anton-karlovskiy" class="w-author__name-link">
                             Anton Karlovskiy
                         </a>
                     </cite>
@@ -401,13 +407,13 @@
 
 
             <div class="w-author">
-                <a href="https://github.com/addyosmani">
+                <a target="_blank" href="https://github.com/addyosmani">
                     <img alt="Addy Osmani" height="64" src="https://avatars.githubusercontent.com/u/110953?s=64&v=4"
                         width="64" class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/addyosmani" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/addyosmani" class="w-author__name-link">
                             Addy Osmani
                         </a>
                     </cite>
@@ -415,14 +421,14 @@
             </div>
 
             <div class="w-author">
-                <a href="https://github.com/pi0">
+                <a target="_blank" href="https://github.com/pi0">
                     <img alt="Pooya Parsa" height="64"
                         src="https://avatars.githubusercontent.com/u/5158436?s=64&v=4" width="64"
                         class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/pi0" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/pi0" class="w-author__name-link">
                             Pooya Parsa
                         </a>
                     </cite>
@@ -430,14 +436,14 @@
             </div>
 
             <div class="w-author">
-                <a href="https://github.com/danielroe">
+                <a target="_blank" href="https://github.com/danielroe">
                     <img alt="Daniel Roe" height="64"
                         src="https://avatars.githubusercontent.com/u/28706372?s=64&v=4" width="64"
                         class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/danielroe" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/danielroe" class="w-author__name-link">
                             Daniel Roe
                         </a>
                     </cite>
@@ -445,14 +451,14 @@
             </div>
 
             <div class="w-author">
-                <a href="https://github.com/antfu">
+                <a target="_blank" href="https://github.com/antfu">
                     <img alt="Anthony Fu" height="64"
                         src="https://avatars.githubusercontent.com/u/11247099?s=64&v=4" width="64"
                         class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/antfu" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/antfu" class="w-author__name-link">
                             Anthony Fu
                         </a>
                     </cite>
@@ -460,14 +466,14 @@
             </div>
 
             <div class="w-author">
-                <a href="https://github.com/Atinux">
+                <a target="_blank" href="https://github.com/Atinux">
                     <img alt="Sébastien Chopin" height="64"
                         src="https://avatars.githubusercontent.com/u/904724?s=64&v=4" width="64"
                         class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/Atinux" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/Atinux" class="w-author__name-link">
                             Sébastien Chopin
                         </a>
                     </cite>
@@ -476,14 +482,14 @@
 
 
             <div class="w-author">
-                <a href="https://github.com/jasonujmaalvis">
+                <a target="_blank" href="https://github.com/jasonujmaalvis">
                     <img alt="Jason Ujma-Alvis" height="64"
                         src="https://avatars.githubusercontent.com/u/1336276?v=4&s=64" width="64"
                         class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/jasonujmaalvis" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/jasonujmaalvis" class="w-author__name-link">
                             Jason Ujma-Alvis
                         </a>
                     </cite>
@@ -491,14 +497,14 @@
             </div>
 
             <div class="w-author">
-                <a href="push-based.io">
+                <a target="_blank" href="push-based.io">
                     <img alt="push-based.io" height="64"
                         src="https://avatars.githubusercontent.com/u/95700427?s=200&amp;v=4" width="64"
                         class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://push-based.io" class="w-author__name-link">
+                        <a target="_blank" href="https://push-based.io" class="w-author__name-link">
                             push-based.io
                         </a>
                     </cite>
@@ -506,14 +512,14 @@
             </div>
 
             <div class="w-author">
-                <a href="https://github.com/BioPhoton">
+                <a target="_blank" href="https://github.com/BioPhoton">
                     <img alt="Michael Hladky" height="64"
                         src="https://avatars.githubusercontent.com/u/10064416?v=4&s=64" width="64"
                         class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/BioPhoton" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/BioPhoton" class="w-author__name-link">
                             Michael Hladky
                         </a>
                     </cite>
@@ -522,14 +528,14 @@
 
 
             <div class="w-author">
-                <a href="https://github.com/mgechev">
+                <a target="_blank" href="https://github.com/mgechev">
                     <img alt="Minko Gechev" height="64"
                         src="https://avatars.githubusercontent.com/u/455023?v=4&s=64" width="64"
                         class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/mgechev" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/mgechev" class="w-author__name-link">
                             Minko Gechev
                         </a>
                     </cite>
@@ -537,14 +543,14 @@
             </div>
 
             <div class="w-author">
-                <a href="https://github.com/Oktay">
+                <a target="_blank" href="https://github.com/Oktay">
                     <img alt="Oktay" height="64"
                         src="https://avatars.githubusercontent.com/u/3390175?s=64&v=4" width="64"
                         class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/Oktay" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/Oktay" class="w-author__name-link">
                             Oktay
                         </a>
                     </cite>
@@ -557,20 +563,20 @@
         <p>Special thanks goes to Jason who wrote the original <a
                 href="https://github.com/jasonujmaalvis/vue-movies">vue-movies</a>, Fidalgo for <a
                 href="https://github.com/fidalgodev/movie-library-react">react-movie-library</a>, Wayne for the
-            original <a href="https://github.com/WayneMorganUK/sveltekit-movie-app">SvelteKit Movie App</a> and
-            Hiten for <a href="https://github.com/bhi10/TMDB">Lit TMDB</a></p>
+            original <a target="_blank" href="https://github.com/WayneMorganUK/sveltekit-movie-app">SvelteKit Movie App</a> and
+            Hiten for <a target="_blank" href="https://github.com/bhi10/TMDB">Lit TMDB</a></p>
 
         <div class="w-authors w-mt--xl w-pt--sm">
 
             <div class="w-author">
-                <a href="https://github.com/jasonujmaalvis">
+                <a target="_blank" href="https://github.com/jasonujmaalvis">
                     <img alt="Jason Ujma-Alvis" height="64"
                         src="https://avatars.githubusercontent.com/u/1336276?v=4&s=64" width="64"
                         class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/jasonujmaalvis" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/jasonujmaalvis" class="w-author__name-link">
                             Jason Ujma-Alvis
                         </a>
                     </cite>
@@ -579,13 +585,13 @@
 
 
             <div class="w-author">
-                <a href="https://github.com/fidalgodev">
+                <a target="_blank" href="https://github.com/fidalgodev">
                     <img alt="Fidalgo" height="64" src="https://avatars.githubusercontent.com/u/41859298?v=4&s=64"
                         width="64" class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/fidalgodev" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/fidalgodev" class="w-author__name-link">
                             Fidalgo
                         </a>
                     </cite>
@@ -593,13 +599,13 @@
             </div>
 
             <div class="w-author">
-                <a href="https://github.com/WayneMorganUK">
+                <a target="_blank" href="https://github.com/WayneMorganUK">
                     <img alt="Wayne" height="64" src="https://avatars.githubusercontent.com/u/44246461?v=4&s=64"
                         width="64" class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/WayneMorganUK" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/WayneMorganUK" class="w-author__name-link">
                             Wayne
                         </a>
                     </cite>
@@ -607,13 +613,13 @@
             </div>
 
             <div class="w-author">
-                <a href="https://github.com/bhi10">
+                <a target="_blank" href="https://github.com/bhi10">
                     <img alt="Wayne" height="64" src="https://avatars.githubusercontent.com/u/26054319?v=4&s=64"
                         width="64" class="w-author__image" loading="lazy" decoding="async">
                 </a>
                 <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                     <cite class="w-author__name">
-                        <a href="https://github.com/bhi10/" class="w-author__name-link">
+                        <a target="_blank" href="https://github.com/bhi10/" class="w-author__name-link">
                             Hiten
                         </a>
                     </cite>
@@ -623,7 +629,7 @@
         </div>
 
         <p>&nbsp;</p>
-        <p>These demo applications abide by the <a href="https://www.themoviedb.org/terms-of-use">TMDB</a> terms of
+        <p>These demo applications abide by the <a target="_blank" href="https://www.themoviedb.org/terms-of-use">TMDB</a> terms of
             service and should be used for learning purposes only.</p>
 
     </section>
@@ -631,7 +637,7 @@
         <h2>License</h2>
         <p>Unless otherwise stated, demo applications are released under an <a
                 href="https://github.com/tastejs/next-movies/blob/main/LICENSE.md">MIT license</a>, consistent with
-            code made available via the TodoMVC/<a href="https://github.com/tastejs">TasteJS</a> GitHub
+            code made available via the TodoMVC/<a target="_blank" href="https://github.com/tastejs">TasteJS</a> GitHub
             organization. </p>
     </section>
     </details>
