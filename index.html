@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="A non-trivial Movies learning application in Next.js, Angular or Nuxt.js. Built to show developers how they can deliver reasonably good experience while maintaining good developer experience.">
+        content="Movies is a non-trivial learning application in Next.js, Angular, Nuxt.js, Svelte, Lit and other frameworks. Built to show developers how they can deliver reasonably good experience while maintaining good developer experience.">
     <title>Movies App</title>
     <link rel="favicon" href="/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -24,7 +24,7 @@
     <meta property="og:url" content="https://tastejs.com/movies/">
     <meta property="og:title" content="Movies App">
     <meta property="og:description"
-        content="A non-trivial Movies learning application in Next.js, Angular or Nuxt.js. Built to show developers how they can deliver reasonably good experience while maintaining good developer experience.">
+        content="Movies is a non-trivial learning application in Next.js, Angular, Nuxt.js, Svelte, Lit and other frameworks. Built to show developers how they can deliver reasonably good experience while maintaining good developer experience.">
     <meta property="og:image" content="https://tastejs.com/images/movies-app.jpg">
 
     <!-- Twitter -->
@@ -32,26 +32,30 @@
     <meta property="twitter:url" content="https://tastejs.com/movies/">
     <meta property="twitter:title" content="Movies App">
     <meta property="twitter:description"
-        content="A non-trivial Movies learning application in Next.js, Angular or Nuxt.js. Built to show developers how they can deliver reasonably good experience while maintaining good developer experience.">
+        content="Movies is a non-trivial learning application in Next.js, Angular, Nuxt.js, Svelte, Lit and other frameworks. Built to show developers how they can deliver reasonably good experience while maintaining good developer experience.">
     <meta property="twitter:image" content="https://tastejs.com/images/movies-app.jpg">
 
+    <!-- Existing head meta tags -->
+    <style>
+        :root {
+            /* CSS variables for primary and secondary colors */
+            --primary-color: #7d5578;
+            --secondary-color: black;
+        }
 
-    <style id="critical">
         body {
             background: black;
             color: white;
-        }
-
-        body {
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            height: 100vh;
         }
 
-        ::-moz-selection {
-            background-color: #C3CFE2;
-        }
-
-        #logo-container {
-            margin-top: 25px;
+        .body-gradient {
+            background-image: -moz-linear-gradient(180deg, rgba(22, 22, 22, 0) 50%, #30325d 100%);
+            background-image: -webkit-linear-gradient(180deg, rgba(22, 22, 22, 0) 50%, #30325d 100%);
+            background-image: linear-gradient(180deg, rgba(22, 22, 22, 0) 50%, #30325d 100%);
         }
 
         #logo-container img {
@@ -59,93 +63,115 @@
             height: auto;
         }
 
-        ::selection {
-            background-color: #C3CFE2;
+        main {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: auto;
+            gap: 20px;
         }
 
-        .center {
+        @media (max-width: 600px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right-column {
+            align-self: start;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .movie-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .movie-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            background: white;
+            min-height: 100px;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+
+        .movie-item div:first-child {
+            align-self: center;
+        }
+
+        .movie-item div:last-child {
             text-align: center;
         }
 
-        .headline {
-            /* text-transform: uppercase; */
-            /* background: linear-gradient(45deg, #a875ec 20%, #ff6b7c 100%); */
-            background: rgb(130, 52, 240);
-            background: linear-gradient(186deg, rgba(130, 52, 240, 1) 0%, rgba(161, 35, 254, 1) 19%, rgba(222, 53, 238, 1) 36%, rgba(246, 74, 214, 1) 55%, rgba(251, 103, 172, 1) 72%, rgba(251, 136, 137, 1) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 6em;
-            text-align: center;
-            line-height: 1;
-            font-weight: 800;
-            letter-spacing: -.06em;
-            margin-bottom: 10px;
+        .movie-item div:last-child {
+            display: flex;
+            flex-direction: column;
         }
 
-        a {
-            color: #F74FCF;
+
+        .movie-logo {
+            width: 100%;
+            min-height: 60px;
+            max-height: 80px;
         }
 
-        section {
-            padding: 26px 70px;
-        }
 
-        .demo-link a,
-        .source-link a {
-            padding: 16px 0px 16px 0px;
-            background: black;
-            border-radius: 5px;
+        .demo-btn,
+        .source-btn {
+            padding: 10px;
             border: 1px solid white;
-            margin: 16px 16px 0px 0px;
+            border-radius: 5px;
             text-decoration: none;
             color: white;
-            display: inline-grid;
         }
 
-        .demo-link a:hover {
+        .demo-btn {
+            background: black;
+        }
+
+        .source-btn {
+            background: #7d5578;
+        }
+
+        .demo-btn:hover {
             color: white;
             background: gray;
         }
 
-        .source-link a {
-            background:#d62eba;
-        }
-
-        .source-link a:hover {
+        .source-btn:hover {
             background: #ac288b;
         }
 
-        #demos {
-            padding: 16px;
+        details {
+            cursor: pointer;
         }
 
-        section img {
-            width: 100%;
-            height: auto;
+        details[open] summary~* {
+            animation: sweep .5s ease-in-out;
         }
 
-        #screenshots {
-            /* https://web.dev/content-visibility/ */
-            content-visibility: auto;
-            contain-intrinsic-size: 6500px;
-        }
-
-        @media all and (max-width: 960px) {
-            #demos {
-                padding: inherit;
+        @keyframes sweep {
+            0% {
+                opacity: 0;
+                margin-top: -10px
             }
 
-            .demo-link {
-                display: block;
-            }
-
-            section {
-                padding: 26px 20px;
-            }
-
-            #logo-container img {
-                width: 90%;
-                height: auto;
+            100% {
+                opacity: 1;
+                margin-top: 0px
             }
         }
 
@@ -180,194 +206,253 @@
             width: 64px;
         }
 
+        details a {
+            color: #d62eba;
+        }
+
         .additional {
             padding-top: 16px;
             padding-bottom: 0px;
             font-size: 0.9em;
         }
 
-
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            /* Set the grid to have 3 columns */
-            gap: 16px;
-            padding: 16px;
+        .left-column {
+            margin-left: 32px;
         }
 
-        .grid-item {
-            display: grid;
-            grid-template-rows: 1fr 1fr 1fr;
-            /* Three equal rows */
-            background: white;
-            padding: 16px;
-            border-radius: 8px;
-            text-align: center;
+        .right-column img {
+            height: 94vh;
+            margin-top: 16px;
         }
 
-        .grid-item img {
-            width: auto;
-            height: 60px;
-            margin: auto;
-            margin-bottom: 8px;
-            grid-row: 1;
-            /* Place in the first row */
-            text-align: center;
-        }
-
-        .grid-item .demo-link,
-        .grid-item .source-link {
-            grid-row: 2;
-            /* Place in the second row */
-        }
-
-        .grid-item .source-link {
-            grid-row: 3;
-            /* Place in the third row */
-        }
-
-        .grid-item span {
-            color: black;
-        }
-
-        /* Centering the Demo and Source link text */
-        .demo-link a,
-        .source-link a {
-            text-align: center;
+        .vhs {
+            border-radius: 6px;
+            background: black;
+            display: block;
             width: 100%;
+            margin-top: 10px;
+            height: 100px;
+            background-image: url(images/vhs-background.jpeg);
+            background-size: contain;
+        }
+
+        .vhs-label {
+            border-radius: 4px;
+            background: white;
+            color: black;
+            width: 79%;
+            margin-left: 154px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            height: 67px;
+            padding: 8px;
+            background: linear-gradient(180deg, white, rgb(255 255 255 / 88%));
+        }
+
+        .vhs a {
+            color: var(--primary-color)
+        }
+
+        .vhs:visited {
+            color: var(--secondary-color);
         }
 
 
-        /* Responsive design: if the screen width is less than 960px, switch to a single column layout */
-        @media (max-width: 960px) {
-            .grid-container {
-                grid-template-columns: 1fr;
+        @media screen and (max-width: 900px) {
+
+            body {
+                overflow-y: visible;
             }
+
+            .vhs-label {
+                width: 100%;
+                margin-left: 0px;
+                height: auto;
+                padding: 0px;
+            }
+
+            .vhs {
+                height: 100px;
+                background: none;
+            }
+
+            .right-column img {
+                height: 43vh;
+            }
+
+            .left-column {
+                margin-left: 0px;
+            }
+
         }
     </style>
+
 </head>
 
-<body>
+<body class="body-gradient">
+
     <main>
-        <div class="center" id="logo-container">
-            <img fetchpriority="high" src="images/logo.svg" width="1035" height="236" alt="Movies App Logo">
-        </div>
-        <h2 class="center">A non-trivial learning app in multiple frameworks</h2>
 
-        <!-- 3x3 Grid layout starts here -->
-        <div class="grid-container">
-            <!-- Next.js Block -->
-            <div class="grid-item">
-                <img src="images/nextjs-logo.svg" alt="Next.js Logo">
-                <span><small>Fuller Next 12 version: <a href="https://next-movies-zeta.vercel.app/">demo</a> and <a href="https://github.com/tastejs/next-movies">source</a></small></span>
-                <div class="demo-link">
-                    <a href="https://movies-flax-sigma.vercel.app/">Demo</a>
+        <div class="left-column">
+
+            <h2 class="center">A non-trivial Movies app built in multiple frameworks</h2>
+
+            <!-- Movies grid -->
+            <div class="movie-grid">
+
+                <!-- Next.js -->
+                <div class="movie-item">
+                    <div>
+                        <img class="movie-logo" src="images/nextjs-logo.svg" alt="Next.js Logo">
+                    </div>
+
+                    <div>
+                        <a target="_blank" target="_blank" href="https://movies-flax-sigma.vercel.app/"
+                            class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/tastejs/next-movies" class="source-btn">Source</a>
+                        <div style="display:block; font-size:0.8em; color:black; margin-top: 8px;">Next 12 <a
+                                href="https://next-movies-zeta.vercel.app/">demo</a> and <a
+                                href="https://github.com/oktay/movies">source</a></div>
+                    </div>
+
                 </div>
-                <div class="source-link">
-                    <a href="https://github.com/oktay/movies">Source</a><br>
+
+                <!-- Angular -->
+                <div class="movie-item">
+                    <div>
+                        <img class="movie-logo" src="images/angular-logo.svg" alt="Angular Logo">
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://angular-movies-a12d3.web.app" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/tastejs/angular-movies"
+                            class="source-btn">Source</a>
+                    </div>
+                </div>
+
+                <!-- Nuxt -->
+                <div class="movie-item">
+                    <div>
+                        <img class="movie-logo" src="images/nuxtjs-logo.svg" alt="Nuxt Logo">
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://movies.nuxt.space/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/nuxt/movies" class="source-btn">Source</a>
+                    </div>
+                </div>
+
+                <!-- Astro -->
+                <div class="movie-item">
+                    <div>
+                        <img class="movie-logo" src="images/astro-logo.svg" alt="Astro Logo">
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://astro-movies-app.netlify.app/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/Charca/astro-movies" class="source-btn">Source</a>
+                    </div>
+                </div>
+
+                <!-- Solid -->
+                <div class="movie-item">
+                    <div>
+                        <img class="movie-logo" src="images/solid-logo.svg" alt="Solid Logo">
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://solid-movies.app/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/solidjs/solid-start/tree/movies/examples/movies"
+                            class="source-btn">Source</a>
+                    </div>
+                </div>
+
+                <!-- SvelteKit -->
+                <div class="movie-item">
+                    <div>
+                        <img class="movie-logo" src="images/svelte-logo.svg" alt="SvelteKit Logo">
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://sveltekit-movies.netlify.app" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/tastejs/sveltekit-movie-app"
+                            class="source-btn">Source</a>
+                    </div>
+                </div>
+
+                <!-- Lit -->
+                <div class="movie-item">
+                    <div>
+                        <img class="movie-logo" src="images/lit-logo.svg" alt="Lit Logo">
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://lit-movies-2.netlify.app/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/bhi10/TMDB" class="source-btn">Source</a>
+                    </div>
+                </div>
+
+                <!-- Qwik -->
+                <div class="movie-item">
+                    <div>
+                        <img class="movie-logo" src="images/qwik-logo.svg" alt="Qwik Logo">
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://qwik-city-movies-wm.netlify.app/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/wmalarski/qwik-city-movies"
+                            class="source-btn">Source</a>
+                    </div>
+                </div>
+
+                <!-- Enhance -->
+                <div class="movie-item">
+                    <div>
+                        <img class="movie-logo" src="images/enhance-logo.svg" alt="Enhance Logo">
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://enhance-movies.com/" class="demo-btn">Demo</a>
+                        <a target="_blank" href="https://github.com/enhance-dev/enhance-movies"
+                            class="source-btn">Source</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="vhs">
+                <div class="vhs-label">
+                    Movies is a non-trivial demo app built using the <a href="https://www.themoviedb.org/">TMDB (The
+                        Movie Database)</a> API.
+                    It is built with learning, but not strict comparison, in mind.
+                    Movies is part of the <a href="https://todomvc.com">TodoMVC</a> TasteJS
+                    project.
                 </div>
             </div>
 
-            <!-- Angular Block -->
-            <div class="grid-item">
-                <img src="images/angular-logo.svg" alt="Angular Logo">
-                <div class="demo-link"><a href="https://angular-movies-a12d3.web.app">Demo</a></div>
-                <div class="source-link"><a href="https://github.com/tastejs/angular-movies">Source</a></div>
-            </div>
-
-            <!-- Nuxt Block -->
-            <div class="grid-item">
-                <img src="images/nuxtjs-logo.svg" alt="Nuxt Logo">
-                <div class="demo-link"><a href="https://movies.nuxt.space/">Demo</a></div>
-                <div class="source-link"><a href="https://github.com/nuxt/movies">Source</a></div>
-            </div>
-
-            <!-- Astro Block -->
-            <div class="grid-item">
-                <img src="images/astro-logo.svg" alt="Astro Logo">
-                <div class="demo-link"><a href="https://astro-movies-app.netlify.app/">Demo</a></div>
-                <div class="source-link"><a href="https://github.com/Charca/astro-movies">Source</a></div>
-            </div>
-
-            <!-- Solid Block -->
-            <div class="grid-item">
-                <img src="images/solid-logo.svg" alt="Solid Logo">
-                <div class="demo-link"><a href="https://solid-movies.app/">Demo</a></div>
-                <div class="source-link"><a
-                        href="https://github.com/solidjs/solid-start/tree/movies/examples/movies">Source</a></div>
-            </div>
-
-            <!-- SvelteKit Block -->
-            <div class="grid-item">
-                <img src="images/svelte-logo.svg" alt="SvelteKit Logo">
-                <div class="demo-link"><a href="https://sveltekit-movies.netlify.app">Demo</a></div>
-                <div class="source-link"><a href="https://github.com/tastejs/sveltekit-movie-app">Source</a></div>
-            </div>
-
-            <!-- Lit Block -->
-            <div class="grid-item">
-                <img src="images/lit-logo.svg" alt="Lit Logo">
-                <div class="demo-link"><a href="https://lit-movies-2.netlify.app/">Demo</a></div>
-                <div class="source-link"><a href="https://github.com/bhi10/TMDB">Source</a></div>
-            </div>
-
-            <!-- Qwik Block -->
-            <div class="grid-item">
-                <img src="images/qwik-logo.svg" alt="Qwik Logo">
-                <div class="demo-link"><a href="https://qwik-city-movies-wm.netlify.app/">Demo</a></div>
-                <div class="source-link"><a href="https://github.com/wmalarski/qwik-city-movies">Source</a></div>
-            </div>
-
-            <!-- Enhance Block -->
-            <div class="grid-item">
-                <img src="images/enhance-logo.svg" alt="Enhance Logo">
-                <div class="demo-link"><a href="https://enhance-movies.com/">Demo</a></div>
-                <div class="source-link"><a href="https://github.com/enhance-dev/enhance-movies">Source</a></div>
-            </div>
         </div>
 
+        <div class="right-column">
+            <picture>
+                <source srcset="images/poster-medium.webp" media="(max-width: 1000px)" type="image/webp">
+                <source srcset="images/poster.webp" media="(min-width: 1001px)">
+                <img src="images/poster.webp" alt="movies VHS tape showing a car driving on a highway"
+                    fetchpriority="high">
+            </picture>
 
-
-        <!-- <main>
-        <div class="center" id="logo-container">
-            <img fetchpriority="high" src="images/logo.svg" width="1035" height="236" alt="Movies App Logo">
         </div>
-        <h2 class="center">A non-trivial learning app in
-            <a href="https://github.com/tastejs/next-movies">Next.js</a>,
-            <a href="https://github.com/tastejs/angular-movies">Angular</a>,
-            <a href="https://github.com/nuxt/movies">Nuxt</a>,
-            <a href="https://github.com/Charca/astro-movies">Astro</a> or
-            <a href="https://github.com/solidjs/solid-start/tree/movies/examples/movies">Solid</a>
-        </h2>
-        <div class="center" id="demos">
-            <a class="demo-link" rel="noopener" target="_blank" href="https://next-movies-zeta.vercel.app/">Demo - Next.js</a>
-            <a class="demo-link" rel="noopener" target="_blank" href="https://angular-movies-a12d3.web.app">Demo - Angular</a>
-            <a class="demo-link" rel="noopener" target="_blank" href="https://movies.nuxt.space/">Demo - Nuxt</a>
-            <a class="demo-link" rel="noopener" target="_blank" href="https://astro-movies-app.netlify.app/">Demo - Astro</a>
-            <a class="demo-link" rel="noopener" target="_blank" href="https://solid-movies.app/">Demo - Solid</a>
-            <p class="additional">You may also be interested in TMDB apps using
-                <a rel="noopener" target="_blank" href="https://github.com/devXprite/MoviesPrix">Next.js 13+</a> (<a rel="noopener" target="_blank" href="https://moviesprix.vercel.app/">Demo</a>)
-                , <a rel="noopener" target="_blank" href="https://github.com/tastejs/sveltekit-movie-app">SvelteKit</a> (<a rel="noopener" target="_blank" href="https://sveltekit-movies.netlify.app">Demo</a>), <a rel="noopener" target="_blank" href="https://github.com/bhi10/TMDB">Lit</a> (<a rel="noopener" target="_blank" href="https://lit-movies-2.netlify.app/">Demo</a>), <a href="https://github.com/wmalarski/qwik-city-movies">Qwik</a> (<a rel="noopener" target="_blank"  href="https://qwik-city-movies-wm.netlify.app/">Demo</a>) or <a href="https://github.com/enhance-dev/enhance-movies">Enhance</a> (<a rel="noopener" target="_blank"  href="https://enhance-movies.com/">Demo</a>)</p>
-        </div> -->
-        <section>
-            <section class="center">
-                <img alt="This is a comparison of the two different kinds of movie application implementations that are available. While there are visual differences from a feature perspective they have a lot of similarities"
-                    src="images/next-nuxt.jpeg" loading="lazy" width="1200" height="478">
-            </section>
-            <h3>
-                <p>The Movies App is a non-trivial demo application built on top of the <a
-                        href="https://www.themoviedb.org/">TMDB (The Movie Database)</a> API. It features multiple
-                    routes and views, authentication, dark mode and a range of performance optimizations.</p>
-                <p>Our goal is to educate developers on how they can build a good user-experience that can deliver
-                    reasonable performance while maintaining good DX. We discourage using these apps for drawing apples
-                    to apples performance comparisons as they were not built with this use-case in mind.</p>
-            </h3>
-            <p><strong>Note:</strong> While every effort has been made to optimize performance, these applications are
-                not considered perfect and can be impacted by TMDB API latency outside our control. Feel free to learn
-                from them or contribute back if you spot something we could improve!</p>
-            <p><strong>Bonus:</strong> If you are looking for a learning resource closer to the "Rosetta stone" for
-                frameworks, look at <a href="https://component-party.dev/">component-party.dev</a>.</p>
+
+    </main>
+
+    <!-- Credits -->
+    <details hidden>
+        <summary>Credits</summary>
+
+        <h3>
+            <p>The Movies App is a non-trivial demo application built on top of the <a
+                    href="https://www.themoviedb.org/">TMDB (The Movie Database)</a> API. It features multiple
+                routes and views, authentication, dark mode and a range of performance optimizations.</p>
+            <p>Our goal is to educate developers on how they can build a good user-experience that can deliver
+                reasonable performance while maintaining good DX. We discourage using these apps for drawing apples
+                to apples performance comparisons as they were not built with this use-case in mind.</p>
+        </h3>
+        <p><strong>Note:</strong> While every effort has been made to optimize performance, these applications are
+            not considered perfect and can be impacted by TMDB API latency outside our control. Feel free to learn
+            from them or contribute back if you spot something we could improve!</p>
+        <p><strong>Bonus:</strong> If you are looking for a learning resource closer to the "Rosetta stone" for
+            frameworks, look at <a target="_blank" href="https://component-party.dev/">component-party.dev</a>.</p>
         </section>
         <section>
             <h2>Views can include:</h2>
@@ -383,106 +468,7 @@
                 <li>Lists - add/remove/edit lists (Next.js)</li>
             </ul>
         </section>
-        <!-- <section class="center" id="screenshots">
-        <h2>Screenshots</h2>
 
-<h4>Category view for Popular (Desktop):</h4>
-
-<picture>
-    <img
-    sizes="(max-width: 1400px) 100vw, 1400px"
-    srcset="
-    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_200/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp 200w,
-    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_472/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp 472w,
-    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_563/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp 563w,
-    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp 1357w,
-    https://res.cloudinary.com/ddxwdqwkr/image/upload/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp 1400w"
-    src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1621796398/next-movies/Screen_Shot_2021-05-14_at_3.22.24_PM.webp"
-    alt="Category view for Popular (Desktop)" width="1024" height="758" loading="lazy">
-</picture>
-
-
-<h4>Category view for Popular (Mobile):</h4>
-
-<picture>
-    <img
-    sizes="(max-width: 1400px) 100vw, 1400px"
-    srcset="
-    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_200/v1622401509/next-movies/mobile-view_copy_2_3x.webp 200w,
-    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_472/v1622401509/next-movies/mobile-view_copy_2_3x.webp 472w,
-    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_563/v1622401509/next-movies/mobile-view_copy_2_3x.webp 563w,
-    https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1622401509/next-movies/mobile-view_copy_2_3x.webp 1357w,
-    https://res.cloudinary.com/ddxwdqwkr/image/upload/v1622401509/next-movies/mobile-view_copy_2_3x.webp 1400w"
-    src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1622401509/next-movies/mobile-view_copy_2_3x.webp"
-    alt="Category view for Popular (Mobile)" width="1024" height="758" loading="lazy">
-</picture>
-
-<h4>Search Results for "Mortal Kombat" (Desktop)</h4>
-<img decode="async" width="1024" height="768" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796423/next-movies/Screen_Shot_2021-05-14_at_3.24.27_PM.webp" loading="lazy" alt="Screenshot"/>
-
-<h4>Movie view for "Mortal Kombat" (Desktop)</h4>
-<img decode="async" width="1024" height="768" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796371/next-movies/Screen_Shot_2021-05-14_at_3.22.28_PM.webp" loading=lazy" alt="Screenshot"/>
-
-
-<h4>Movie view in Light and Dark Modes (Mobile)</h4>
-
-<img decode="async" width="1024" height="768" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1622401902/next-movies/mobile-view_copy_3_3x.webp" loading="lazy" alt="Screenshot"/>
-
-<h4>Category view for "TV/Movies" (Desktop)</h4>
-<img decode="async" width="1024" height="768" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796397/next-movies/Screen_Shot_2021-05-14_at_3.23.32_PM.webp" loading="lazy" alt="Screenshot"/>
-
-<h4>Category view for "Recommended" (Desktop)</h4>
-<img decode="async" width="1024" height="768" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796397/next-movies/Screen_Shot_2021-05-14_at_3.22.38_PM.webp" loading=lazy alt="Screenshot"/>
-
-<h4>Actor view (Desktop)</h4>
-<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1622402393/next-movies/Screen_Shot_2021-05-30_at_12.18.42_PM.webp" alt="Screenshot"/>
-
-<h4>Actor view (Mobile)</h4>
-
-<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1622402842/next-movies/mobile-view_copy_4_3x.webp" alt="Screenshot"/>
-
-<h4>Movies view for Light Mode (Desktop)</h4>
-<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796402/next-movies/Screen_Shot_2021-05-14_at_3.23.46_PM.webp" alt="Screenshot"/>
-
-<h4>Popularity view in dark mode (Desktop)</h4>
-<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796423/next-movies/Screen_Shot_2021-05-14_at_3.27.20_PM.webp" alt="Screenshot"/>
-
-<h4>Logged-in view for creating a list of movies (Desktop)</h4>
-<img loading="lazy" decode="async" width="1024" height="607" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621801624/next-movies/Screen_Shot_2021-05-23_at_1.20.29_PM.webp" alt="Screenshot"/>
-
-<h4>Logged-in view of a single saved list of movies (Desktop)</h4>
-<img loading="lazy" decode="async" width="1024" height="768" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621796391/next-movies/Screen_Shot_2021-05-14_at_3.24.00_PM.webp" alt="Screenshot"/>
-
-<h4>Logged-in view of all of your lists of movies</h4>
-<img loading="lazy" decode="async" width="1024" height="607" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621801624/next-movies/Screen_Shot_2021-05-23_at_1.20.44_PM.webp" alt="Screenshot"/>
-
-<h4>Logged-in view for editing a list of movies (Desktop)</h4>
-<img loading="lazy" decode="async" width="1024" height="607" alt="Screenshot of Movies app" src="https://res.cloudinary.com/ddxwdqwkr/image/upload/q_auto:good,c_scale,w_1357/v1621801624/next-movies/Screen_Shot_2021-05-23_at_1.21.03_PM.webp" alt="Screenshot"/>
-
-    </section>
-
-<section>
-    <h2>Performance Optimizations</h2>
-    <h3>Next.js - Optimized</h3>
-    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1662240576/next-movies/Screen_Shot_2022-09-03_at_2.29.27_PM.webp" alt="LCP happens several seconds prior to when it occurs in the original implementation" width="2790" height="1194"/>
-    <p>PageSpeed Insights - Lighthouse Perfomance Score (86/100)</p>
-    <div style="width:50%">
-    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1662240632/next-movies/Screen_Shot_2022-09-03_at_2.30.22_PM.webp" width="1526" height="880"/>
-    </div>
-    <h3>Nuxt.js - Optimized</h3>
-    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1622491356/next-movies/Nuxt-WebPageTest_-_Visual_Comparison.webp" alt="LCP happens several seconds prior to when it occurs in the original implementation" width="2784" height="1198"/>
-    <p>PageSpeed Insights - Lighthouse Perfomance Score (91/100)</p>
-    <div style="width:50%">
-    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1666210626/next-movies/Screen_Shot_2022-10-19_at_1.15.52_PM.png" width="1496" height="884"/>
-    </div>
-    <h3>Angular - Optimized</h3>
-    <p>PageSpeed Insights - Lighthouse Perfomance Score (92/100)</p>
-    <div style="width:50%">
-    <img loading=lazy src="https://res.cloudinary.com/ddxwdqwkr/image/upload/v1662240889/next-movies/Screen_Shot_2022-09-03_at_2.34.40_PM.webp" width="2136" height="1476"/>
-    </div>
- </section>
-
-</section> -->
 
         <section>
             <h2>Cast/Credits</h2>
@@ -491,14 +477,14 @@
             <div class="w-authors w-mt--xl w-pt--sm">
 
                 <div class="w-author">
-                    <a href="https://github.com/anton-karlovskiy">
+                    <a target="_blank" href="https://github.com/anton-karlovskiy">
                         <img alt="Anton Karlovskiy" height="64"
                             src="https://avatars.githubusercontent.com/u/49653735?s=64&v=4" width="64"
                             class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/anton-karlovskiy" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/anton-karlovskiy" class="w-author__name-link">
                                 Anton Karlovskiy
                             </a>
                         </cite>
@@ -507,13 +493,13 @@
 
 
                 <div class="w-author">
-                    <a href="https://github.com/addyosmani">
+                    <a target="_blank" href="https://github.com/addyosmani">
                         <img alt="Addy Osmani" height="64" src="https://avatars.githubusercontent.com/u/110953?s=64&v=4"
                             width="64" class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/addyosmani" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/addyosmani" class="w-author__name-link">
                                 Addy Osmani
                             </a>
                         </cite>
@@ -521,14 +507,14 @@
                 </div>
 
                 <div class="w-author">
-                    <a href="https://github.com/pi0">
+                    <a target="_blank" href="https://github.com/pi0">
                         <img alt="Pooya Parsa" height="64"
                             src="https://avatars.githubusercontent.com/u/5158436?s=64&v=4" width="64"
                             class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/pi0" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/pi0" class="w-author__name-link">
                                 Pooya Parsa
                             </a>
                         </cite>
@@ -536,14 +522,14 @@
                 </div>
 
                 <div class="w-author">
-                    <a href="https://github.com/danielroe">
+                    <a target="_blank" href="https://github.com/danielroe">
                         <img alt="Daniel Roe" height="64"
                             src="https://avatars.githubusercontent.com/u/28706372?s=64&v=4" width="64"
                             class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/danielroe" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/danielroe" class="w-author__name-link">
                                 Daniel Roe
                             </a>
                         </cite>
@@ -551,14 +537,14 @@
                 </div>
 
                 <div class="w-author">
-                    <a href="https://github.com/antfu">
+                    <a target="_blank" href="https://github.com/antfu">
                         <img alt="Anthony Fu" height="64"
                             src="https://avatars.githubusercontent.com/u/11247099?s=64&v=4" width="64"
                             class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/antfu" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/antfu" class="w-author__name-link">
                                 Anthony Fu
                             </a>
                         </cite>
@@ -566,14 +552,14 @@
                 </div>
 
                 <div class="w-author">
-                    <a href="https://github.com/Atinux">
+                    <a target="_blank" href="https://github.com/Atinux">
                         <img alt="Sébastien Chopin" height="64"
                             src="https://avatars.githubusercontent.com/u/904724?s=64&v=4" width="64"
                             class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/Atinux" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/Atinux" class="w-author__name-link">
                                 Sébastien Chopin
                             </a>
                         </cite>
@@ -582,14 +568,14 @@
 
 
                 <div class="w-author">
-                    <a href="https://github.com/jasonujmaalvis">
+                    <a target="_blank" href="https://github.com/jasonujmaalvis">
                         <img alt="Jason Ujma-Alvis" height="64"
                             src="https://avatars.githubusercontent.com/u/1336276?v=4&s=64" width="64"
                             class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/jasonujmaalvis" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/jasonujmaalvis" class="w-author__name-link">
                                 Jason Ujma-Alvis
                             </a>
                         </cite>
@@ -597,14 +583,14 @@
                 </div>
 
                 <div class="w-author">
-                    <a href="push-based.io">
+                    <a target="_blank" href="push-based.io">
                         <img alt="push-based.io" height="64"
                             src="https://avatars.githubusercontent.com/u/95700427?s=200&amp;v=4" width="64"
                             class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://push-based.io" class="w-author__name-link">
+                            <a target="_blank" href="https://push-based.io" class="w-author__name-link">
                                 push-based.io
                             </a>
                         </cite>
@@ -612,14 +598,14 @@
                 </div>
 
                 <div class="w-author">
-                    <a href="https://github.com/BioPhoton">
+                    <a target="_blank" href="https://github.com/BioPhoton">
                         <img alt="Michael Hladky" height="64"
                             src="https://avatars.githubusercontent.com/u/10064416?v=4&s=64" width="64"
                             class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/BioPhoton" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/BioPhoton" class="w-author__name-link">
                                 Michael Hladky
                             </a>
                         </cite>
@@ -628,14 +614,14 @@
 
 
                 <div class="w-author">
-                    <a href="https://github.com/mgechev">
+                    <a target="_blank" href="https://github.com/mgechev">
                         <img alt="Minko Gechev" height="64"
                             src="https://avatars.githubusercontent.com/u/455023?v=4&s=64" width="64"
                             class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/mgechev" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/mgechev" class="w-author__name-link">
                                 Minko Gechev
                             </a>
                         </cite>
@@ -643,14 +629,13 @@
                 </div>
 
                 <div class="w-author">
-                    <a href="https://github.com/Oktay">
-                        <img alt="Oktay" height="64"
-                            src="https://avatars.githubusercontent.com/u/3390175?s=64&v=4" width="64"
-                            class="w-author__image" loading="lazy" decoding="async">
+                    <a target="_blank" href="https://github.com/Oktay">
+                        <img alt="Oktay" height="64" src="https://avatars.githubusercontent.com/u/3390175?s=64&v=4"
+                            width="64" class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/Oktay" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/Oktay" class="w-author__name-link">
                                 Oktay
                             </a>
                         </cite>
@@ -663,20 +648,21 @@
             <p>Special thanks goes to Jason who wrote the original <a
                     href="https://github.com/jasonujmaalvis/vue-movies">vue-movies</a>, Fidalgo for <a
                     href="https://github.com/fidalgodev/movie-library-react">react-movie-library</a>, Wayne for the
-                original <a href="https://github.com/WayneMorganUK/sveltekit-movie-app">SvelteKit Movie App</a> and
-                Hiten for <a href="https://github.com/bhi10/TMDB">Lit TMDB</a></p>
+                original <a target="_blank" href="https://github.com/WayneMorganUK/sveltekit-movie-app">SvelteKit Movie
+                    App</a> and
+                Hiten for <a target="_blank" href="https://github.com/bhi10/TMDB">Lit TMDB</a></p>
 
             <div class="w-authors w-mt--xl w-pt--sm">
 
                 <div class="w-author">
-                    <a href="https://github.com/jasonujmaalvis">
+                    <a target="_blank" href="https://github.com/jasonujmaalvis">
                         <img alt="Jason Ujma-Alvis" height="64"
                             src="https://avatars.githubusercontent.com/u/1336276?v=4&s=64" width="64"
                             class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/jasonujmaalvis" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/jasonujmaalvis" class="w-author__name-link">
                                 Jason Ujma-Alvis
                             </a>
                         </cite>
@@ -685,13 +671,13 @@
 
 
                 <div class="w-author">
-                    <a href="https://github.com/fidalgodev">
+                    <a target="_blank" href="https://github.com/fidalgodev">
                         <img alt="Fidalgo" height="64" src="https://avatars.githubusercontent.com/u/41859298?v=4&s=64"
                             width="64" class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/fidalgodev" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/fidalgodev" class="w-author__name-link">
                                 Fidalgo
                             </a>
                         </cite>
@@ -699,13 +685,13 @@
                 </div>
 
                 <div class="w-author">
-                    <a href="https://github.com/WayneMorganUK">
+                    <a target="_blank" href="https://github.com/WayneMorganUK">
                         <img alt="Wayne" height="64" src="https://avatars.githubusercontent.com/u/44246461?v=4&s=64"
                             width="64" class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/WayneMorganUK" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/WayneMorganUK" class="w-author__name-link">
                                 Wayne
                             </a>
                         </cite>
@@ -713,13 +699,13 @@
                 </div>
 
                 <div class="w-author">
-                    <a href="https://github.com/bhi10">
+                    <a target="_blank" href="https://github.com/bhi10">
                         <img alt="Wayne" height="64" src="https://avatars.githubusercontent.com/u/26054319?v=4&s=64"
                             width="64" class="w-author__image" loading="lazy" decoding="async">
                     </a>
                     <div class="w-author__info" style="display: flex; flex-direction: column; justify-content: center;">
                         <cite class="w-author__name">
-                            <a href="https://github.com/bhi10/" class="w-author__name-link">
+                            <a target="_blank" href="https://github.com/bhi10/" class="w-author__name-link">
                                 Hiten
                             </a>
                         </cite>
@@ -729,7 +715,8 @@
             </div>
 
             <p>&nbsp;</p>
-            <p>These demo applications abide by the <a href="https://www.themoviedb.org/terms-of-use">TMDB</a> terms of
+            <p>These demo applications abide by the <a target="_blank"
+                    href="https://www.themoviedb.org/terms-of-use">TMDB</a> terms of
                 service and should be used for learning purposes only.</p>
 
         </section>
@@ -737,10 +724,12 @@
             <h2>License</h2>
             <p>Unless otherwise stated, demo applications are released under an <a
                     href="https://github.com/tastejs/next-movies/blob/main/LICENSE.md">MIT license</a>, consistent with
-                code made available via the TodoMVC/<a href="https://github.com/tastejs">TasteJS</a> GitHub
+                code made available via the TodoMVC/<a target="_blank" href="https://github.com/tastejs">TasteJS</a>
+                GitHub
                 organization. </p>
         </section>
-    </main>
+    </details>
+
 </body>
 
 </html>
