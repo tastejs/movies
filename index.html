@@ -227,33 +227,56 @@
 
         .vhs {
             border-radius: 6px;
-            background: black;
+            /* background: black; */
             display: block;
             width: 100%;
             margin-top: 10px;
-            height: 100px;
-            background-image: url(images/vhs-background.jpeg);
+            height: 494px;
+            position: absolute;
+            overflow: hidden;
+            background-image: url(images/vhs-tape-large.webp);
             background-size: contain;
+            background-repeat: no-repeat;
+            bottom: -360px;
+            transition: bottom 0.3s ease-out;
+            max-width: 1000px;
+        }
+
+        .vhs:hover {
+            bottom: -70px;
+            /* This will apply the hover effect */
+            transition: bottom 0.2s ease-in;
+        }
+
+        .vhs-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
         }
 
         .vhs-label {
+            display: none;
             border-radius: 4px;
             background: white;
             color: black;
-            width: 79%;
-            margin-left: 154px;
-            margin-top: 8px;
-            margin-bottom: 8px;
-            height: 67px;
+            width: 40%;
+            /* Updated to 40% as per requirement */
+            position: absolute;
+            /* Positioning absolutely */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Center the div */
             padding: 8px;
-            background: linear-gradient(180deg, white, rgb(255 255 255 / 88%));
+            background: linear-gradient(180deg, white, rgba(255, 255, 255, 0.88));
         }
 
         .vhs a {
-            color: var(--primary-color)
+            color: var(--primary-color);
         }
 
-        .vhs:visited {
+        .vhs a:visited {
             color: var(--secondary-color);
         }
 
@@ -264,16 +287,8 @@
                 overflow-y: visible;
             }
 
-            .vhs-label {
-                width: 100%;
-                margin-left: 0px;
-                height: auto;
-                padding: 0px;
-            }
-
             .vhs {
-                height: 100px;
-                background: none;
+                display: none;
             }
 
             .right-column img {
@@ -284,6 +299,12 @@
                 margin-left: 0px;
             }
 
+        }
+
+        @media screen and (max-width: 600px) {
+            .vhs {
+                display: none;
+            }
         }
     </style>
 
@@ -409,16 +430,14 @@
 
             </div>
 
-            <div class="vhs">
+            <div class="vhs" aria-label="Movies is a non-trivial demo app built using the TMDB (The
+                Movie Database) API. It is built with learning, but not strict comparison, in mind.">
                 <div class="vhs-label">
                     Movies is a non-trivial demo app built using the <a href="https://www.themoviedb.org/">TMDB (The
-                        Movie Database)</a> API.
-                    It is built with learning, but not strict comparison, in mind.
-                    Movies is part of the <a href="https://todomvc.com">TodoMVC</a> TasteJS
-                    project.
+                        Movie Database)</a> API. It is built with learning, but not strict comparison, in mind. Movies
+                    is part of the <a href="https://todomvc.com">TodoMVC</a> TasteJS project.
                 </div>
             </div>
-
         </div>
 
         <div class="right-column">
